@@ -1,6 +1,15 @@
-var url = new URL(window.location.href);
+function isYoutubeShortsUrl(url) {
+    return url.includes("/shorts/");
+}
 
-var correctedPathname = url.pathname.replace("shorts/", "watch?v=");
-var correctedHref = url.protocol + "//" + url.hostname + correctedPathname;
+function redirectToCorrectUrl(shortsUrl) {
+    correctedUrl = shortsUrl.replace("shorts/", "watch?v=");
+    window.location.replace(correctedUrl);
+}
 
-window.location.replace(correctedHref);
+window.setInterval(() => {
+    var currentUrl = window.location.href;
+    if (isYoutubeShortsUrl(currentUrl)) {
+        redirectToCorrectUrl(currentUrl);
+    }
+}, 500);

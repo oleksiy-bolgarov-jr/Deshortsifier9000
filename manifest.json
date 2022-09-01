@@ -1,7 +1,13 @@
 {
     "manifest_version": 2,
     "name": "Deshortsifier 9000",
-    "version": "1.0",
+    "version": "1.0.1",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "deshortsifier9000@alexjr.bolgarov.org"
+        }
+    },
     
     "description": "Redirects all YouTube Shorts links so that the video is played in the normal video player instead of the shorts player.",
 
@@ -12,7 +18,7 @@
 
     "content_scripts": [
         {
-            "matches": ["*://*.youtube.com/shorts/*"],
+            "matches": ["*://*.youtube.com/*"],
             "js": ["deshortsifier.js"]
         }
     ]
