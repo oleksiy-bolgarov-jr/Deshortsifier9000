@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Deshortsifier 9000",
+    "version": "1.0",
+    
+    "description": "Redirects all YouTube Shorts links so that the video is played in the normal video player instead of the shorts player.",
+
+    "icons": {
+        "48": "icons/no_shorts.svg",
+        "96": "icons/no_shorts.svg"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.youtube.com/shorts/*"],
+            "js": ["deshortsifier.js"]
+        }
+    ]
+}
